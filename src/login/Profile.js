@@ -12,7 +12,7 @@ const Profile = () => {
     }).then(res => res.json())
     .then(user => {
       setUser(user);
-    }).catch(e => navigate('/login'));
+    }).catch(e => navigate('/home'));
   }
   const logout = () => {
     fetch(`${API_URL}/logout`, {
