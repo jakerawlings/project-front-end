@@ -1,8 +1,7 @@
 import {useEffect, useState} from "react";
 import {API_URL} from "../consts";
 import {useNavigate} from "react-router-dom";
-import Navigation from "../Nagivation";
-
+import Navigation from "../Navigation";
 const Profile = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();

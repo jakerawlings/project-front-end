@@ -1,5 +1,4 @@
-import Navigation from "./Nagivation";
-
+import Navigation from "./Navigation";
 const Home = () => {
   return(
       <div>

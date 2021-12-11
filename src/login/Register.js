@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import {API_URL} from "../consts";
-import Navigation from "../Nagivation";
+import Navigation from "../Navigation";
 
 const Register = () => {
   const [user, setUser] = useState({username: 'alice', password: 'alice123'});
