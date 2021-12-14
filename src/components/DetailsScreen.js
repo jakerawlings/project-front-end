@@ -64,13 +64,21 @@ const DetailsScreen = () => {
             <p className="mt-2">
               {movieDetails.Plot}
             </p>
-            <button className="btn btn-success" onClick={() => {
-              setUser({...user, favorites: [...user.favorites, movieDetails]})
-            }}>
-              Favorite Movie
-            </button>
+            {
+              state === 'initial' && <button className="btn btn-success" onClick={() => {
+                setUser({...user, favorites: [...user.favorites, movieDetails]})
+                setState('favorited')
+              }}>
+                Favorite Movie
+              </button>
+            }
+            {
+              state === 'favorited' && <button className="btn btn-success">
+                Favorited
+              </button>
+            }
             <button className="btn" onClick={updateUser}>
-              Update User
+              Save Changes
             </button>
             <br/>
             <button className="btn btn-primary mt-2">

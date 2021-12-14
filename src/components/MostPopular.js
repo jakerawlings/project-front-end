@@ -19,19 +19,16 @@ const MostPopular = () => {
 
   return (
       <div>
-        <h4 className="text-left">Most Popular Movies</h4>
+        <h3 className="text-left mt-3">Recent Popular Movies</h3>
         <ul className="list-group">
-          {users.map(user => {
-            user.favorites.map(movie =>
-                <li className="list-group-item">
-                  <Link to={`/details/${movie.imdbID}`}>
-                    <h3>{movie.Title}</h3>
-                    <img src={movie.Poster}/>
-                  </Link>
-                </li>
-            )
-          })
-          }
+          {users.map(user => <li className="list-group-item">
+            {user.favorites.map(movie => <li className="list-group-item">
+              <Link to={`/details/${movie.imdbID}`}>
+                <h4>{movie.Title}</h4>
+                <img src={movie.Poster}/>
+              </Link>
+            </li>)}
+          </li> )}
         </ul>
       </div>
   )
