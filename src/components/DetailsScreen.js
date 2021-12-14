@@ -77,13 +77,16 @@ const DetailsScreen = () => {
                 Favorited
               </button>
             }
-            <button className="btn" onClick={updateUser}>
+            <button className="btn btn-primary ms-2" onClick={updateUser}>
               Save Changes
             </button>
             <br/>
-            <button className="btn btn-primary mt-2">
-              Add Review
-            </button>
+
+            {
+              user.role === 'Critic' &&  <button className="btn btn-primary mt-2">
+                Add Review
+              </button>
+            }
           </div>
           <div className="col-4">
             <img src={movieDetails.Poster} height={400} width={250}/>

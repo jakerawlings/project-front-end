@@ -20,10 +20,14 @@ const Home = () => {
       <div>
         <h1 className="display-1 text-center text-danger">The Movie Club</h1>
         <Navigation active="home"></Navigation>
-        <Link to="/search">
-          <button className="btn btn-danger">Start Browsing Movies
-          </button>
-        </Link>
+        <h3 className="text-center text-primary">Welcome to the Movie Club</h3>
+        <h4 className="text-center text-primary">Click the button below to start browsing movies</h4>
+        <div className="d-flex justify-content-center text-center">
+          <Link to="/search">
+            <button className="btn btn-success">Start Browsing Movies
+            </button>
+          </Link>
+        </div>
         <MostPopular/>
         <div className="row justify-content-center">
         </div>
