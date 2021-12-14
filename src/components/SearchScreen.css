@@ -1,0 +1,11 @@
+.mv-search-result {
+  text-decoration: none;
+  color: red;
+  font-size: 30px;
+  box-shadow: none;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+  text-decoration: none;
+}
