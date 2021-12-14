@@ -83,9 +83,17 @@ const DetailsScreen = () => {
             <br/>
 
             {
-              user.role === 'Critic' &&  <button className="btn btn-primary mt-2">
-                Add Review
-              </button>
+              user.role === 'Critic' && <form>
+                <div className="form-group mt-2">
+                  <h5 className="mt-3">Write a Review</h5>
+                  <textarea className="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"></textarea>
+                </div>
+                <button className="btn btn-success mt-2 mb-2" onClick={updateUser}>
+                  Post Review
+                </button>
+              </form>
             }
           </div>
           <div className="col-4">

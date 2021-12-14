@@ -96,7 +96,7 @@ const Profile = () => {
           <YourFavorites/>
         </div>
         {
-          user.role === "Critic" && <h3 className="text-left mt-3">Your Reviews</h3>
+          user.role === "Critic" && <h3 className="text-left mt-3 text-success">Your Reviews</h3>
         }
       </div>
   );
