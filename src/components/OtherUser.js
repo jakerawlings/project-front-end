@@ -1,43 +1,49 @@
-// import {useNavigate, useParams} from "react-router-dom";
-// import {useEffect, useState} from "react";
-// import Navigation from "./Navigation";
-// import {API_URL} from "../consts";
-//
-// const OtherUser = () => {
-//   const params = useParams();
-//   const [movieDetails, setMovieDetails] = useState({Actors: ''});
-//   const [state, setState] = useState("initial")
-//
-//   const findMovieDetailsByImdbID = () =>
-//       fetch(`https://www.omdbapi.com/?i=${params.id}&apikey=852159f0`)
-//       .then(res => res.json())
-//       .then(movie => setMovieDetails(movie));
-//   useEffect(findMovieDetailsByImdbID, []);
-//
-//   const navigate = useNavigate();
-//
-//   const getProfile = () => {
-//     fetch(`${API_URL}/profile`, {
-//       method: 'POST',
-//       credentials: 'include'
-//     }).then(res => res.json())
-//     .then(user => {
-//       setUser(user);
-//     }).catch(e => navigate('/login'));
-//   }
-//
-//   const [user, setUser] = useState({});
-//   useEffect(getProfile, [navigate]);
-//
-//   const updateUser = () => {
-//     fetch(`${API_URL}/users`, {
-//       method: 'PUT',
-//       credentials: 'include',
-//       body: JSON.stringify(user),
-//       mode: "cors",
-//       headers: {'Content-Type': 'application/json'}
-//     }).then(res => res.json())
-//     .then(user => {
-//       setUser(user);
-//     }).catch(e => navigate('/login'));
-//   }
+import {useNavigate, useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
+import Navigation from "./Navigation";
+import {API_URL} from "../consts";
+
+const OtherUser = () => {
+  const params = useParams();
+
+  // const findUserbyID = () =>
+  //     fetch(`${API_URL}/users/${params.id}`, {
+  //       method: 'GET',
+  //       credentials: 'include',
+  //       mode: "cors"
+  //     })
+  //     .then(res => res.json())
+  //     .then(user => setUserDetails(user));
+  //
+  // const [userDetails, setUserDetails] = useState({favorites: ''});
+  // useEffect(findUserbyID, []);
+
+  const getAllUsers = () =>
+      fetch(`${API_URL}/get-users`, {
+        method: 'GET',
+        credentials: 'include',
+        mode: "cors"
+      }).then(res => res.json())
+      .then(users => setUsers(users));
+
+  const getUser = (userId) => {
+    users.map(user => {
+      if (user._id === userId) {
+        setUser(user)
+      }
+    })
+  }
+
+  const [users, setUsers] = useState([])
+  const [user, setUser] = useState({favorites: []})
+  useEffect(getAllUsers, []);
+  useEffect(getUser(params.id), []);
+
+
+  return (
+      <div>
+        {JSON.stringify(users)}
+      </div>
+  );
+};
+export default OtherUser;

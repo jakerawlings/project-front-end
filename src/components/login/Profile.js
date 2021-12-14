@@ -21,7 +21,7 @@ const Profile = () => {
     fetch(`${API_URL}/logout`, {
       method: 'POST',
       credentials: 'include'
-    }).then(res => navigate('/'));
+    }).then(res => navigate('/login'));
   }
 
   const updateUser = () => {
@@ -95,7 +95,9 @@ const Profile = () => {
         <div>
           <YourFavorites/>
         </div>
-        <h3 className="text-left mt-3">Your Reviews</h3>
+        {
+          user.role === "Critic" && <h3 className="text-left mt-3">Your Reviews</h3>
+        }
       </div>
   );
 };

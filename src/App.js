@@ -7,6 +7,7 @@ import Profile from "./components/login/Profile";
 import SearchScreen from "./components/SearchScreen";
 import DetailsScreen from "./components/DetailsScreen";
 import PrivacyPolicy from "./components/PrivacyPolicy"
+import OtherUser from "./components/OtherUser";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/search/:searchTerm" element={<SearchScreen/>}/>
             <Route path="/details/:id" element={<DetailsScreen/>}/>
             <Route path="privacy-policy" element={<PrivacyPolicy/>}/>
+            <Route path="profile/:id" element={<OtherUser/>}/>
           </Routes>
         </BrowserRouter>
       </div>

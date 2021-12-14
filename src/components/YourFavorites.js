@@ -9,7 +9,8 @@ const YourFavorites = () => {
   const getProfile = () => {
     fetch(`${API_URL}/profile`, {
       method: 'POST',
-      credentials: 'include'
+      credentials: 'include',
+      mode: "cors"
     }).then(res => res.json())
     .then(user => {
       setUser(user);
@@ -22,13 +23,13 @@ const YourFavorites = () => {
 
   return (
       <div>
-        <h3 className="text-left mt-3">Your Favorites</h3>
+        <h3 className="text-left mt-3 text-success">Your Favorites</h3>
         <ul className="list-group">
           {user.favorites.map(movie =>
               <li className="list-group-item">
                 <Link to={`/details/${movie.imdbID}`}>
-                  <h3>{movie.Title}</h3>
-                  <img src={movie.Poster}/>
+                  <h4>{movie.Title}</h4>
+                  <img src={movie.Poster} height="300px"/>
                 </Link>
               </li>
           )}
