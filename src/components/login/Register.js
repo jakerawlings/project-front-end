@@ -51,6 +51,20 @@ const Register = () => {
                            {...user, email: e.target.value})}/>
                 <label htmlFor="floatingEmail">Email Address</label>
               </div>
+              <div className="btn-group" role="group"
+                   aria-label="Basic radio toggle button group">
+                <input type="radio" className="btn-check" name="btnradio"
+                       id="btnradio1" autoComplete="off"
+                       onClick={() => setUser({...user, role: "Fan"})}/>
+                <label className="btn btn-outline-primary"
+                       htmlFor="btnradio1">Fan</label>
+                <input type="radio" className="btn-check" name="btnradio"
+                       id="btnradio3" autoComplete="off"
+                       onClick={() => setUser({...user, role: "Critic"})}/>
+                <label className="btn btn-outline-primary"
+                       htmlFor="btnradio3">Critic</label>
+              </div>
+              <br/>
               <button
                   className="btn btn-danger mt-2"
                   onClick={register}>

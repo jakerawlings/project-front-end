@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {API_URL} from "../consts";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Profile from "./login/Profile";
 
 const YourFavorites = () => {
-  const [user, setUser] = useState({});
   const navigate = useNavigate();
 
   const getProfile = () => {
@@ -17,7 +16,9 @@ const YourFavorites = () => {
     }).catch(e => navigate('/login'));
   }
 
+  const [user, setUser] = useState({favorites: []});
   useEffect(getProfile, [navigate]);
+
 
   return (
       <div>
@@ -25,7 +26,10 @@ const YourFavorites = () => {
         <ul className="list-group">
           {user.favorites.map(movie =>
               <li className="list-group-item">
-                <img src={movie.Poster}/>
+                <Link to={`/details/${movie.imdbID}`}>
+                  <h3>{movie.Title}</h3>
+                  <img src={movie.Poster}/>
+                </Link>
               </li>
           )}
         </ul>
