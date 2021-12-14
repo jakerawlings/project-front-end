@@ -39,7 +39,6 @@ const OtherUser = () => {
   useEffect(getAllUsers, []);
   useEffect(getUser(params.id), []);
 
-
   return (
       <div>
         {JSON.stringify(users)}

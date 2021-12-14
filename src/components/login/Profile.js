@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {API_URL} from "../../consts";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import Navigation from "../Navigation";
 import YourFavorites from "../YourFavorites";
 
@@ -96,7 +96,8 @@ const Profile = () => {
           <YourFavorites/>
         </div>
         {
-          user.role === "Critic" && <h3 className="text-left mt-3 text-success">Your Reviews</h3>
+          user.role === "Critic" && <h3
+              className="text-left mt-3 text-success">Your Reviews</h3>
         }
       </div>
   );

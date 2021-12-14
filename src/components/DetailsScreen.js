@@ -65,10 +65,15 @@ const DetailsScreen = () => {
               {movieDetails.Plot}
             </p>
             {
-              state === 'initial' && <button className="btn btn-success" onClick={() => {
-                setUser({...user, favorites: [...user.favorites, movieDetails]})
-                setState('favorited')
-              }}>
+              state === 'initial' && <button className="btn btn-success"
+                                             onClick={() => {
+                                               setUser({
+                                                 ...user,
+                                                 favorites: [...user.favorites,
+                                                   movieDetails]
+                                               })
+                                               setState('favorited')
+                                             }}>
                 Favorite Movie
               </button>
             }
@@ -90,7 +95,8 @@ const DetailsScreen = () => {
                             id="exampleFormControlTextarea1"
                             rows="3"></textarea>
                 </div>
-                <button className="btn btn-success mt-2 mb-2" onClick={updateUser}>
+                <button className="btn btn-success mt-2 mb-2"
+                        onClick={updateUser}>
                   Post Review
                 </button>
               </form>

@@ -5,7 +5,6 @@
   box-shadow: none;
 }
 
-a:hover, a:visited, a:link, a:active
-{
+a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }

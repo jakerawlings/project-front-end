@@ -20,7 +20,6 @@ const YourFavorites = () => {
   const [user, setUser] = useState({favorites: []});
   useEffect(getProfile, [navigate]);
 
-
   return (
       <div>
         <h3 className="text-left mt-3 text-success">Your Favorites</h3>

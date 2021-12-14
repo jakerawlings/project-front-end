@@ -1,7 +1,7 @@
 import Navigation from "./Navigation";
 
 const PrivacyPolicy = () => {
-  return(
+  return (
       <div>
         <h1 className="display-1 text-center text-danger">Privacy Policy</h1>
         <Navigation active="privacy-policy"></Navigation>
@@ -38,7 +38,8 @@ const PrivacyPolicy = () => {
           Sharing of Information
         </h3>
         <p>
-          Your username, favorite movies, and reviews will be visible to other users to
+          Your username, favorite movies, and reviews will be visible to other
+          users to
           allow for connections between users. Any other information you choose
           to share through reviews will also be visible to other users.
           All of your other personal information (email, password) will not be
