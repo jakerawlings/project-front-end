@@ -101,16 +101,6 @@ const Profile = () => {
           user.role === "Critic" && <h3
               className="text-left mt-3 text-success">Your Reviews</h3>
         }
-
-        {
-          {loggedIn} === true && <h1>Logged In</h1>
-        }
-
-        {
-          {loggedIn} === false && <h1>Logged In</h1>
-        }
-
-        <h2>{loggedIn}</h2>
       </div>
   );
 };
