@@ -18,6 +18,7 @@ const Login = () => {
       navigate('/profile')
     });
   }
+
   return (
       <div>
         <h1 className="display-1 text-center text-danger mb-1">Login</h1>
@@ -66,4 +67,5 @@ const Login = () => {
       </div>
   );
 };
+
 export default Login;
